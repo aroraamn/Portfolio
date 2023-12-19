@@ -4,45 +4,42 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'popins', sens-serif;
+    font-family: 'Didact Gothic', sens-serif;
 }
 body{
     color: #ededed;
-    background: #313866;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
+
 }
-.header{
-    position: fixed;
-    background: #363062;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 10%;
-    background: #051129; 
-    display: flex; 
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+
+.header1{
+    
+
 }
+
 .logo{
     position: absolute;
     font-size: 25px;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    cursor: default;
+    cursor: pointer;
     opacity: 0;
     animation: slideRight 1s ease forwards;
     margin-top: 20px;
     margin-left: 20px;
 }
-.navbar{
-    margin-left: 60%;
+.topnav{
+    margin-left: -100px;
+    left: 60%;
+    position: absolute;
     object-fit: cover;
     display: inline-block;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.navbar a{
+.topnav a{
     display: inline-block;
     font-size: 25px;
     object-fit: cover;
@@ -56,7 +53,7 @@ body{
     animation-delay: calc(.2s * var(--i));
 }
 
-.navbar a:hover{
+.topnav a:hover{
     color: #0ef;
 }
 .my-img{
@@ -67,7 +64,7 @@ body{
     margin-top: -15%;
     max-width: 630px;
     opacity: 0;
-    animation: slideTop 1s ease forwards;
+    animation: slideTop 2s ease forwards;
     animation-delay: 1s;
     margin-bottom: 10%;
 }
@@ -82,7 +79,7 @@ body{
     width: 100%;
     justify-content: space-between;
     height: 100vh;
-    background: #31304D no-repeat;
+  
     background-size: cover;
     background-position: center;
     display: flex;
@@ -197,6 +194,9 @@ body{
     border-radius: 50%;
     transition-delay: .2s;
 }
+.about-text{
+    width: 90%;
+}
 .about-text h2{
     font-size: 60px;
     margin-top: 20px;
@@ -219,7 +219,7 @@ body{
 }
 
 #services{
-    background: #051129;
+    
     color: aliceblue;
     font-size: 20px;
     line-height: 1.4;
@@ -616,7 +616,9 @@ section{
 .row:hover .layer{
     height: 100%;
 }
-
+.contact-text{
+    width: 97vw;
+}
 
 .contact{
     display: grid;
@@ -663,6 +665,12 @@ section{
 .contact-list li a:hover{
     transform: scale(1.01) translateY(-5px);
     color: #0ef;
+}
+.contact-icons{
+    margin-left: 40%;
+}
+.contact-details{
+    text-align: center;
 }
 .contact-icons i{
     display: inline-flex;
@@ -729,11 +737,12 @@ section{
     0 0 25px cyan, 0 0 50px cyan,
     0 0 100px cyan , 0 0 200px cyan;
 } */
-
+.last-text{
+    background-color: #00d4ff;
+}
 .last-text p{
     width: 100%;text-align: center;
     padding: 25px 0;
-    background: rgb(7,85,91);
     font-weight: 300;
     margin-top: 70px;
 }
@@ -800,3 +809,49 @@ section{
         opacity: 1;
     }
 }
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+   
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+    cursor:pointer;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .topnav a {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 1200px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }

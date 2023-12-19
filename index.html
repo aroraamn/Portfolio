@@ -6,17 +6,40 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Exo+2&family=Montserrat:wght@400;500;600;900&family=Poppins:wght@300;400;500;600;700&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js">
+
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
 </head>
+
 <body>
-    <header>
+    <header class="header1">
+
+        
         <a href="#" class="logo">Portfolio</a>
-        <nav class="navbar">
+        <nav class="topnav" id="myTopnav">
             <a href="#home" style="--i:1" class="active">Home</a>
             <a href="#about" style="--i:2" class="active">About</a>
             <a href="#services" style="--i:3" class="active">Skills</a>
             <a href="#skills" style="--i:4" class="active">Portfolio</a>
             <a href="#contact" style="--i:5" class="active">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="bx bx-menu"></i>
+              </a>
        
         </nav>
     </header>
@@ -318,11 +341,13 @@
 <section class="contact" id="contact">
     <div class="contact-text">
         <h2>Contact <span>Me</span></h2>
-        <h4>Let's work together</h4>
+        <h4 style="text-align: center;">Let's work together</h4>
         <p></p>
         <div class="contact-list">
-            <li><i class='bx bxs-send'></i>amn19609@gmail.com</li>
-            <li><i class='bx bxs-phone'></i>7206471779</li>
+            <ul class="contact-details">
+                <li><i class=' bx bxs-send'></i>amn19609@gmail.com</li>
+                <li><i class='bx bxs-phone'></i>7206471779</li>
+            </ul>
         </div>
         <div class="contact-icons">
 
