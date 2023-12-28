@@ -22,7 +22,7 @@ body{
     background: linear-gradient(180deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
     margin: 0;
     height: 100%;
-
+    /* width: 100%; */
 }  
   h2 {
     text-align: center;
@@ -39,7 +39,7 @@ body{
      margin-top: -15px;
   }
   
-  .nav {
+  .nav{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -51,8 +51,24 @@ body{
     font-weight:bolder;
     font-size:25px;
   }
-  
-  .menu li:hover{
+  .nav a{
+    display: block;
+    /* display: inline-block; */
+    font-size: 25px;
+    object-fit: cover;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.nav a:hover{
+     color: #0ef;
+} 
+.menu li:hover{
     color:white;
     cursor:pointer;
   }
@@ -167,18 +183,6 @@ body{
    
     }
   }
-  
-
-
-
-
-
-
-
-
-
-
-
 /* .topnav{
     margin-left: -100px;
     left: 60%;
@@ -188,23 +192,7 @@ body{
     margin-top: 20px;
     margin-bottom: 20px;
 } */
-/* .topnav a{
-    display: inline-block;
-    font-size: 25px;
-    object-fit: cover;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
-    opacity: 0;
-    animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s * var(--i));
-} */
 
-/* .topnav a:hover{
-    color: #0ef;
-} */
 .my-img{
     position: absolute;
     display: inline-block;
@@ -217,6 +205,7 @@ body{
     animation-delay: 1s;
     margin-bottom: 10%;
 }
+
 .my-img:hover{
     box-shadow: 0 0 20px #0ef, 
     0 0 25px #0ef, 0 0 50px #0ef,
@@ -444,28 +433,56 @@ body{
     transform: translateY(-10px);
 }
 
+
 section{
-    display: flex;
-    flex-wrap: wrap;
-}
-.container1{
-    width: 600px;
-    height: 500px;
-    padding: 75px 100px;
-    margin-left: 120px;
-}
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .container1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 100%; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .bar:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .info {
+      width: 100%;
+    }
+  }
 .heading1{
+    margin-left: 20%;
+    margin-right: auto;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+}
+
+.heading2{
     text-align: center;
-    margin-right: 12%;
+    margin-right: 20%;
     text-decoration: underline;
     text-underline-offset: 10px;
     text-decoration-thickness: 5px;
 }
 .bar{
     font-size: 23px;
+    /* margin:6px; */
+    width: 50%;
+    
 }
 .Technical-bars .bar{
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    margin-left: 60px;
 }
 .Technical-bars .bar:first-child{
     margin-top: 0;
@@ -595,18 +612,21 @@ section{
     }
 }
 .radial-bars{
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
-    margin-left: -20px;
-    margin-top: 100px;
+    /* margin-left: -20px; */
+    margin-top: 20%;
+    margin-bottom:20%;
+    gap: 15%;
 }
 .radial-bars .radial-bar{
-    width: 50%;
+    width: 40%;
     height: 200px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    padding-top: 1px;
     position: relative;
 }
 .radial-bars .radial-bar svg{
@@ -638,6 +658,7 @@ section{
     stroke-dasharray: 502;
     stroke-dashoffset: 502;
     stroke-linecap: round;
+    
 }
 .path-1{animation: animate-path1 1s 1s linear forwards;}
 .path-2{animation: animate-path2 1s 1s linear forwards;}
@@ -677,14 +698,15 @@ section{
     opacity: 0;
 }
 .radial-bar .text{
-    width: 100%;
+    width: 50%;
     position: absolute;
     text-align: center;
-    left: 25%;
+    left: 50%;
+    top: auto;
     /* bottom: -35px; */
     transform: translateX(-50px);
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 100;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
@@ -696,11 +718,17 @@ section{
 }
 .main-text h2{
     font-size: 80px;
-    line-height: 2.5;
-    text-align: center;
+    line-height: 3.5;
+    align-items: center;
+    margin-top: 30%;
+    /* margin-left: 50%; */
 }
+
 .main-text h2 span{
     color:#0ef; 
+}
+.main-text h2 span:hover{
+    color:white; 
 }
 .portfolio-content{
     display: grid;
@@ -714,8 +742,10 @@ section{
 }
 .row img{
     width: 100%;
+    line-height: 2;
+    height: 250px;
     margin: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     display: block;
     transition: transform 0.5s;
 }
@@ -733,13 +763,13 @@ section{
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 40px;
+    padding: 0 60px;
     transition: height 0.5s;
 }
 .layer h5{
     color: #000;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 200;
     margin-bottom: 15px;
 }
 .layer p{
@@ -766,7 +796,8 @@ section{
     height: 100%;
 }
 .contact-text{
-    width: 97vw;
+    width: 90vw;
+    line-height: 3;
 }
 
 .contact{
@@ -815,8 +846,30 @@ section{
     transform: scale(1.01) translateY(-5px);
     color: #0ef;
 }
-.contact-icons{
-    margin-left: 40%;
+.contact-icons {
+    margin-top: 100px;
+    display: block;
+    width: 60%; 
+    margin: 8px auto; padding: 16px;
+    text-align: center;
+    -webkit-columns: 3 33%;
+    -moz-columns: 3 33%;
+    columns: 3 33%;
+  }
+
+@media (max-width:1024px){
+    .my-img{
+        display: none;
+    }
+}
+@media (max-width: 768px){
+    .contact-icons {
+      -moz-columns:    1 100%;
+      -webkit-columns: 1 100%;
+      columns:         1 100%;
+      display: inline;
+      margin: 8px auto;
+  }
 }
 .contact-details{
     text-align: center;
@@ -833,7 +886,7 @@ section{
     font-size: 35px;
     color: #0ef;
     text-decoration: none;
-    margin: 30px 15px 30px 0;
+    margin: 30px 15px 30px 15px;
     transition: .5s ease;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
