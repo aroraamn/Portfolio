@@ -14,34 +14,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Exo+2&family=Montserrat:wght@400;500;600;900&family=Poppins:wght@300;400;500;600;700&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js">
-
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
 </script>
 </head>
 
 <body>
     <header class="header1">
-
         
-        <a href="#" class="logo">Portfolio</a>
-        <nav class="topnav" id="myTopnav">
-            <a href="#home" style="--i:1" class="active">Home</a>
-            <a href="#about" style="--i:2" class="active">About</a>
-            <a href="#services" style="--i:3" class="active">Skills</a>
-            <a href="#skills" style="--i:4" class="active">Portfolio</a>
-            <a href="#contact" style="--i:5" class="active">Contact</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="bx bx-menu"></i>
-              </a>
-       
-        </nav>
+        <section class="nav">
+            <!-- We can also insert any logo here     -->
+            <div class="logo">
+               <a href="#home">Portfolio</a> 
+            </div>
+    
+            <!--  checkbox to control the icon's state    -->
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+            <!--  main menu    -->
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </section>
     </header>
 
    <section class="home">
@@ -52,7 +50,7 @@ function myFunction() {
             <p>I'm a Passionate Frontend Developer with a knack for crafting innovative 
                 <br>and user-centric frontend solutions, eager to contribute skills in
                 <br> HTML, CSS and Javascript to create engaging web experiences.</p>
-                <img src = "images/hey.png" class="my-img">
+                <!-- <img src = "images/hey.png" class="my-img"> -->
        
         <div class="home-sci">
             <a href="https://www.linkedin.com/in/aman-arora-580382212/" style="--i:6" class="active"><i class='bx bxl-linkedin' ></i></a>
